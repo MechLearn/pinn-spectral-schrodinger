@@ -3,7 +3,6 @@ venv/
 env/
 __pycache__/
 *.pyc
-outputs/
 *.png
 *.pdf
 .ipynb_checkpoints/

@@ -1,9 +1,9 @@
 save_dir: outputs/runs
-experiment_name: A1
-seed: 4 
+experiment_name: A2
+seed: 4
 
 model:
-  hidden: 128
+  hidden: 256
   use_sine: true
 
 train:

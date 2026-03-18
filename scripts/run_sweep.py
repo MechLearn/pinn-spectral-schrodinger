@@ -6,11 +6,12 @@ import sys
 if __name__ == "__main__":
     cfg = load_config("configs/base.yaml")
 
-    # defaults
-    n_min, n_max = 1, 20
-    if len(sys.argv) >= 3:
-        n_min = int(sys.argv[1])
-        n_max = int(sys.argv[2])
+    # Pedir al usuario interactivamente
+    print("=== PINN Schrödinger 1D ===")
+    n_min = int(input("Modo inicial (n_min): "))
+    n_max = int(input("Modo final  (n_max): "))
+
+    print(f"\nEntrenando modos del {n_min} al {n_max}...")
 
     # semilla desde config
     tf.keras.utils.set_random_seed(int(cfg.get("seed", 0)))
@@ -18,3 +19,5 @@ if __name__ == "__main__":
     for n in range(n_min, n_max + 1):
         print(f"\n===== Running mode n={n} =====")
         run_one_mode_learnE(n, cfg)
+
+    print(f"\n✅ Completado! Modos {n_min} a {n_max} entrenados.")

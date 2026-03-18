@@ -107,7 +107,7 @@ def run_one_mode_learnE(n: int, cfg: dict):
 
     # metrics
     l2_err = float(np.sqrt(np.mean((psi_pred - psi_exact) ** 2)))
-    integ = float(np.trapezoid(psi_pred ** 2, xs.squeeze()))
+    integ = float(np.trapz(psi_pred ** 2, xs.squeeze()))
 
     E_learned = float(tf.nn.softplus(alpha).numpy())
     E_exact = float((n * math.pi) ** 2)
